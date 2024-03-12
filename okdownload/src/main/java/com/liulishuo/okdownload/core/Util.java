@@ -377,6 +377,7 @@ public class Util {
         return uri.getScheme().equals(ContentResolver.SCHEME_FILE);
     }
 
+    @SuppressLint("Range")
     @Nullable public static String getFilenameFromContentUri(@NonNull Uri contentUri) {
         final ContentResolver resolver = OkDownload.with().context().getContentResolver();
         final Cursor cursor = resolver.query(contentUri, null, null, null, null);
@@ -452,7 +453,7 @@ public class Util {
     }
 
     public static void addDefaultUserAgent(@NonNull final DownloadConnection connection) {
-        final String userAgent = "OkDownload/" + BuildConfig.VERSION_NAME;
+        final String userAgent = "OkDownload/" + "1.0.0";
         connection.addHeader(USER_AGENT, userAgent);
     }
 }

@@ -3,16 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka'
 
 android {
+    namespace 'com.liulishuo.okdownload.kotlin'
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
         targetCompatibility rootProject.ext.targetCompatibilityVersion
-    }
-
-    dexOptions {
-        preDexLibraries = !rootProject.ext.isCi
     }
 
     defaultConfig {
@@ -44,9 +40,4 @@ dokka {
 tasks.withType(Javadoc).all {
     excludes = ['**/*.kt']
     dependsOn dokka
-}
-
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
-if (hasProperty("isCI")) {
-    apply from: rootProject.file('gradle/codecov.gradle')
 }

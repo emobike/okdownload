@@ -1,16 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.liulishuo.okdownload.connection.okhttp'
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
         targetCompatibility rootProject.ext.targetCompatibilityVersion
-    }
-
-    dexOptions {
-        preDexLibraries = !rootProject.ext.isCi
     }
 
     defaultConfig {
@@ -30,9 +26,4 @@ dependencies {
 
     implementation dep.okhttp3
     implementation dep.supportAnnotations
-}
-
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
-if (hasProperty("isCI")) {
-    apply from: rootProject.file('gradle/codecov.gradle')
 }

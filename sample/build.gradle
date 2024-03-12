@@ -1,22 +1,20 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    namespace 'com.liulishuo.okdownload.sample'
+    compileSdk 34
 
     compileOptions {
-        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
-        targetCompatibility rootProject.ext.targetCompatibilityVersion
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     defaultConfig {
         applicationId "com.liulishuo.okdownload.sample"
         // using 19, because we demo for content-uri(CATEGORY_OPENABLE)
-        minSdkVersion 19
-        targetSdkVersion rootProject.ext.targetSdkVersion
-
+        minSdkVersion 24
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
@@ -74,10 +72,4 @@ dependencies {
     implementation project(':kotlin')
 
     compileOnly dep.findbugsAnnotations
-}
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
 }

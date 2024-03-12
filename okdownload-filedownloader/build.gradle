@@ -17,16 +17,12 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.liulishuo.filedownloader'
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
         targetCompatibility rootProject.ext.targetCompatibilityVersion
-    }
-
-    dexOptions {
-        preDexLibraries = !rootProject.ext.isCi
     }
 
     defaultConfig {
@@ -49,5 +45,3 @@ dependencies {
 
     compileOnly dep.findbugsAnnotations
 }
-
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')

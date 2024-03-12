@@ -1,16 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.liulishuo.okdownload.process'
     compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
         targetCompatibility rootProject.ext.targetCompatibilityVersion
-    }
-
-    dexOptions {
-        preDexLibraries = !rootProject.ext.isCi
     }
 
     defaultConfig {

@@ -85,7 +85,7 @@ public class HeaderInterceptorTest {
 
         assertThat(nameCaptor.getAllValues()).containsExactlyInAnyOrder(RANGE, USER_AGENT);
         assertThat(valueCaptor.getAllValues())
-                .containsExactlyInAnyOrder("bytes=0-9", "OkDownload/" + BuildConfig.VERSION_NAME);
+                .containsExactlyInAnyOrder("bytes=0-9", "OkDownload/" + "1.0.0");
 
         when(chain.getBlockIndex()).thenReturn(1);
         when(info.getBlock(1)).thenReturn(new BlockInfo(10, 10));
@@ -101,7 +101,7 @@ public class HeaderInterceptorTest {
 
         assertThat(nameCaptor.getAllValues()).containsExactlyInAnyOrder(RANGE, USER_AGENT);
         assertThat(valueCaptor.getAllValues())
-                .containsExactlyInAnyOrder("bytes=10-19", "OkDownload/" + BuildConfig.VERSION_NAME);
+                .containsExactlyInAnyOrder("bytes=10-19", "OkDownload/" +"1.0.0");
 
         when(chain.getBlockIndex()).thenReturn(2);
         when(info.getBlock(2)).thenReturn(new BlockInfo(20, 10));
@@ -117,7 +117,7 @@ public class HeaderInterceptorTest {
 
         assertThat(nameCaptor.getAllValues()).containsExactlyInAnyOrder(RANGE, USER_AGENT);
         assertThat(valueCaptor.getAllValues())
-                .containsExactlyInAnyOrder("bytes=20-29", "OkDownload/" + BuildConfig.VERSION_NAME);
+                .containsExactlyInAnyOrder("bytes=20-29", "OkDownload/" + "1.0.0");
     }
 
     @Test
@@ -155,7 +155,7 @@ public class HeaderInterceptorTest {
                         USER_AGENT);
         assertThat(valueCaptor.getAllValues())
                 .containsExactlyInAnyOrder("header1-value1", "header1-value2", "header2-value",
-                        "bytes=0-9", "etag1", "OkDownload/" + BuildConfig.VERSION_NAME);
+                        "bytes=0-9", "etag1", "OkDownload/" + "1.0.0");
 
         verify(OkDownload.with().downloadStrategy())
                 .resumeAvailableResponseCheck(eq(connected), eq(0), eq(info));
