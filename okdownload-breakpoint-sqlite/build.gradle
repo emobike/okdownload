@@ -21,8 +21,6 @@ dependencies {
     testImplementation dep.assertj
     testImplementation dep.robolectric
     testImplementation project(':okdownload')
-    
-    implementation dep.supportAnnotations
 
     compileOnly project(':okdownload')
 }

@@ -25,5 +25,4 @@ dependencies {
     compileOnly project(':okdownload')
 
     implementation dep.okhttp3
-    implementation dep.supportAnnotations
 }

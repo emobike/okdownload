@@ -36,12 +36,8 @@ dependencies {
     testImplementation dep.assertj
     testImplementation dep.robolectric
     testImplementation project(':okdownload')
-
     implementation project(':okdownload')
     implementation project(':okhttp')
     implementation dep.okhttp3
-
-    implementation dep.supportAnnotations
-
     compileOnly dep.findbugsAnnotations
 }

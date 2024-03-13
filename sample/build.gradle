@@ -41,9 +41,7 @@ android {
 dependencies {
     implementation dep.kotlin
     //noinspection GradleDependency source code is not available on 26
-    implementation dep.supportDesign
     //noinspection GradleDependency source code is not available on 26
-    implementation dep.supportV7
     // Appcompat-v7 (only Anko Commons)
     implementation dep.ankoSdk
     implementation dep.ankoV7Commons
@@ -54,7 +52,6 @@ dependencies {
     // CardView-v7
     implementation dep.ankoCardviewV7
     //noinspection GradleDependency
-    implementation dep.supportCardview
     // Design
     implementation dep.ankoDesign
     implementation dep.ankoDesignCoroutines
@@ -63,8 +60,10 @@ dependencies {
     implementation dep.ankoRecyclerviewV7Coroutines
     implementation dep.kotlinxCoroutines
     implementation dep.kotlinxCoroutineAndroid
-    implementation dep.supportConstraintLayout
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.11.0'
     testImplementation dep.junit
     implementation project(':okdownload')
     implementation project(':sqlite')

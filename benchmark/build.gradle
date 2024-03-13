@@ -4,7 +4,7 @@ plugins {
     id 'kotlin-android'
 }
 android {
-    namespace 'com.liulishuo.okdownload.benchmark'
+    namespace 'cn.dreamtobe.okdownload.benchmark'
     compileSdk rootProject.ext.compileSdkVersion
 
     compileOptions {
@@ -29,6 +29,12 @@ android {
 
         vectorDrawables.useSupportLibrary = true
     }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -38,10 +44,8 @@ android {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
-    implementation dep.supportV7
-    implementation dep.supportDesign
-    implementation dep.supportConstraintLayout
-
-    testImplementation dep.junit
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.23'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    testImplementation 'junit:junit:4.13.2'
 }
