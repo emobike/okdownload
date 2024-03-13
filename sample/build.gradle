@@ -64,6 +64,7 @@ dependencies {
     implementation dep.kotlinxCoroutines
     implementation dep.kotlinxCoroutineAndroid
     implementation dep.supportConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation dep.junit
     implementation project(':okdownload')
     implementation project(':sqlite')
