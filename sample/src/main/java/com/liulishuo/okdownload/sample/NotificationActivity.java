@@ -24,10 +24,8 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
-
 import android.view.View;
 import android.widget.TextView;
-
 import com.liulishuo.okdownload.DownloadListener;
 import com.liulishuo.okdownload.DownloadTask;
 import com.liulishuo.okdownload.StatusUtil;
@@ -35,7 +33,6 @@ import com.liulishuo.okdownload.UnifiedListenerManager;
 import com.liulishuo.okdownload.sample.base.BaseSampleActivity;
 import com.liulishuo.okdownload.sample.util.DemoUtil;
 import com.liulishuo.okdownload.sample.util.NotificationSampleListener;
-
 import org.jetbrains.annotations.Nullable;
 
 public class NotificationActivity extends BaseSampleActivity {
@@ -125,9 +122,9 @@ public class NotificationActivity extends BaseSampleActivity {
 
         final Intent intent = new Intent(CancelReceiver.ACTION);
         final PendingIntent cancelPendingIntent = PendingIntent.getBroadcast(this, 0, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+                PendingIntent.FLAG_IMMUTABLE);
 
-        listener.setAction(new NotificationCompat.Action(0, "Cancel", cancelPendingIntent));
+        listener.setAction(new NotificationCompat.Action(R.drawable.ic_dashboard_black_24dp, "Cancel", cancelPendingIntent));
         listener.initNotification();
     }
 
