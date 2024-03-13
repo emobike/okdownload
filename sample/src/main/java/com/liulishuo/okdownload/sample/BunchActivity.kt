@@ -20,13 +20,13 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.os.SystemClock
-import android.support.annotation.IdRes
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import androidx.annotation.IdRes
 import com.liulishuo.okdownload.DownloadContext
 import com.liulishuo.okdownload.DownloadTask
 import com.liulishuo.okdownload.SpeedCalculator

@@ -16,8 +16,9 @@
 
 package com.liulishuo.okdownload.core;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.io.File;
 
@@ -28,13 +29,15 @@ public abstract class IdentifiedTask {
 
     public abstract int getId();
 
-    @NonNull public abstract String getUrl();
+    @NonNull
+    public abstract String getUrl();
 
     @NonNull protected abstract File getProvidedPathFile();
 
     @NonNull public abstract File getParentFile();
 
-    @Nullable public abstract String getFilename();
+    @Nullable
+    public abstract String getFilename();
 
     public boolean compareIgnoreId(IdentifiedTask another) {
         if (!getUrl().equals(another.getUrl())) return false;

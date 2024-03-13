@@ -17,10 +17,11 @@
 package com.liulishuo.okdownload;
 
 import android.net.Uri;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.SparseArray;
+
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.liulishuo.okdownload.core.IdentifiedTask;
 import com.liulishuo.okdownload.core.Util;
@@ -45,11 +46,13 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class DownloadTask extends IdentifiedTask implements Comparable<DownloadTask> {
     private final int id;
-    @NonNull private final String url;
+    @NonNull
+    private final String url;
     private final Uri uri;
     private final Map<String, List<String>> headerMapFields;
 
-    @Nullable private BreakpointInfo info;
+    @Nullable
+    private BreakpointInfo info;
     /**
      * This value more larger the priority more high.
      */

@@ -16,11 +16,12 @@
 
 package com.liulishuo.okdownload.core.breakpoint;
 
-import android.support.annotation.IntRange;
 
 import java.util.concurrent.atomic.AtomicLong;
 
 import static com.liulishuo.okdownload.core.Util.CHUNKED_CONTENT_LENGTH;
+
+import androidx.annotation.IntRange;
 
 public class BlockInfo {
     @IntRange(from = 0)

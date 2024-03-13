@@ -16,7 +16,6 @@
 
 package com.liulishuo.okdownload.sample.util;
 
-import android.os.Build;
 import android.widget.ProgressBar;
 
 public class ProgressUtil {
@@ -32,11 +31,7 @@ public class ProgressUtil {
         final int shrinkRate = (int) bar.getTag();
         final int progress = (int) ((currentOffset) / shrinkRate);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            bar.setProgress(progress, anim);
-        } else {
-            bar.setProgress(progress);
-        }
+        bar.setProgress(progress, anim);
     }
 
     public static void calcProgressToViewAndMark(ProgressBar bar, long offset, long total) {
@@ -50,14 +45,8 @@ public class ProgressUtil {
                 ? 1 : (int) (total / contentLengthOnInt);
         bar.setTag(shrinkRate);
         final int progress = (int) (offset / shrinkRate);
-
-
         bar.setMax(contentLengthOnInt);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            bar.setProgress(progress, anim);
-        } else {
-            bar.setProgress(progress);
-        }
+        bar.setProgress(progress, anim);
     }
 
     private static int reducePrecision(long origin) {

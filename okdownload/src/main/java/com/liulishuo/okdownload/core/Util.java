@@ -27,8 +27,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.StatFs;
 import android.provider.OpenableColumns;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.liulishuo.okdownload.BuildConfig;
@@ -400,6 +400,7 @@ public class Util {
         return candidate == null ? new File("/") : candidate;
     }
 
+    @SuppressLint("Range")
     public static long getSizeFromContentUri(@NonNull Uri contentUri) {
         final ContentResolver resolver = OkDownload.with().context().getContentResolver();
         final Cursor cursor = resolver.query(contentUri, null, null, null, null);

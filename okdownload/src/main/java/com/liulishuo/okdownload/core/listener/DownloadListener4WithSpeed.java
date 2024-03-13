@@ -16,10 +16,11 @@
 
 package com.liulishuo.okdownload.core.listener;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.liulishuo.okdownload.DownloadTask;
+import com.liulishuo.okdownload.SpeedCalculator;
 import com.liulishuo.okdownload.core.breakpoint.BlockInfo;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointInfo;
 import com.liulishuo.okdownload.core.cause.EndCause;
@@ -56,6 +57,10 @@ public abstract class DownloadListener4WithSpeed extends DownloadListener4
     @Override
     public final void taskEnd(DownloadTask task, EndCause cause, @Nullable Exception realCause,
                               @NonNull Listener4Assist.Listener4Model model) { }
+
+    public abstract void taskEnd(@NonNull DownloadTask task, @NonNull EndCause cause,
+                                 @Nullable Exception realCause,
+                                 @NonNull SpeedCalculator taskSpeed);
 
     private static class Listener4WithSpeedModelCreator implements
             ListenerModelHandler.ModelCreator<Listener4SpeedAssistExtend.Listener4SpeedModel> {

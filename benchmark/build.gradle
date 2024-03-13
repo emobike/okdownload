@@ -5,7 +5,7 @@ plugins {
 }
 android {
     namespace 'com.liulishuo.okdownload.benchmark'
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdk rootProject.ext.compileSdkVersion
 
     compileOptions {
         sourceCompatibility rootProject.ext.sourceCompatibilityVersion
@@ -38,8 +38,7 @@ android {
 }
 
 dependencies {
-    implementation dep.kotlin
-
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
     implementation dep.supportV7
     implementation dep.supportDesign
     implementation dep.supportConstraintLayout
